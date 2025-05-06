@@ -33,7 +33,10 @@ body{
 }
 
 .header {
-    box-shadow: 0 3px 6px var(--grey-color-200);
+    box-shadow: 0 3px 6px var(--grey-color-300);
+    position: sticky;
+    top: 0;
+    background-color: var(--white-color);
 }
 
 .header .container {
@@ -69,8 +72,7 @@ body{
     min-height: 912px;
     margin-top: 130px;
 }
-#main .section__heading{
-    text-align: center;
+.section__heading{
     font: normal normal normal 49px/57px var(--font-primary);
     color: var(--black-color);
     margin-bottom: 20px;
@@ -119,12 +121,14 @@ body{
     justify-content: center;
     gap: 200px;
 }
-
 #cta .section__heading {
     text-align: center;
+}
+.section__heading {
+
     font: normal normal normal 36px/42px var(--font-primary);
     color: var(--black-color);
-    margin-bottom: 120px;
+
 }
 .cta {
     text-align: center;
@@ -170,4 +174,71 @@ body{
 .blue img{
     top: 14px;
     right: -20px;
+}
+#benefits{
+    background-color: var(--grey-color-100);
+    padding: 105px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    background-color: var(--white-color);
+    padding: 38px 71px 38px 36px;
+    margin-bottom: 37px;
+}
+
+.row:nth-child(2n){
+    flex-direction: row-reverse;
+}
+
+#benefits .col {
+    width: 50%;
+}
+#benefits .col:last-of-type{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#benefits .col .section__heading{
+    margin-bottom: 30px;
+}
+#benefits .col .section__description{
+    margin-bottom: 50px;
+}
+hr{
+    width: 327px;
+    height: 4px;
+    border:none;
+    display: inline-block;
+}
+.mbp {
+    max-width: 386px;
+    position: relative;
+    z-index: 1;
+}
+.rectangle {
+    width: 180px;
+    height: 180px;
+    border-radius: 40px;
+    position: relative;
+    right: -130px;
+    top: 100px;
+    z-index: 0;
+    rotate: 45deg;
+}
+.ipn {
+    max-width: 386px;
+    position: relative;
+    z-index: 1;
+}
+.circle--big{
+    width: 320px;
+    height: 320px;
+    position: relative;
+    right: 50px;
+    top: 300px;
+    border-radius: 50%;
+    z-index: 0;
 }
