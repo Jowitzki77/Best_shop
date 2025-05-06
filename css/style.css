@@ -11,13 +11,55 @@
     --blue-color-light: #07ACE629;
     --red-color: #FB3B64;
     --green-color: #55DFB4;
-    --red-color-transparent: #F9043629;
-    --black-color-v2: #13253B;
+    --red-color-transparent: rgba(249, 4, 54, 0.16);
+    --blackblue-color-v2: #13253B;
     --red-color-v2: #EB476E;
-    --red-color-transparenter: #FF091129;
+    --font-primary: "Open Sans", sans-serif;
+    --font-secondary: "Raleway", sans-serif;
 
+
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--font-primary), sans-serif;
 }
 
 .container {
     width: 1352px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--grey-color-100);
+}
+
+.header {
+    box-shadow: 0 3px 6px var(--grey-color-200);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.header__logo{
+    font: normal normal 300 32px/37px var(--font-secondary);
+    color: var(--blue-color);
+}
+
+.header__menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font: normal normal bold 11px/15px "Open Sans";
+    letter-spacing: 3.28px;
+    color: var(--grey-color-300);
+    margin-right: 95px;
+}
+
+.header__menu a:hover {
+    color: var(--black-color);
+    border-bottom: 4px solid var(--blue-color);
+    padding-bottom: 23px;
 }
