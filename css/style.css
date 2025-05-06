@@ -30,7 +30,6 @@ body{
     width: 1352px;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--grey-color-100);
 }
 
 .header {
@@ -62,4 +61,85 @@ body{
     color: var(--black-color);
     border-bottom: 4px solid var(--blue-color);
     padding-bottom: 23px;
+}
+#main{
+    background: url("../assets/background.png") 0% 0% no-repeat padding-box;
+    background-size: 100% auto;
+    background-position: bottom;
+    min-height: 912px;
+    margin-top: 130px;
+}
+#main .section__heading{
+    text-align: center;
+    font: normal normal normal 49px/57px var(--font-primary);
+    color: var(--black-color);
+    margin-bottom: 20px;
+}
+#main .section__description{
+    text-align: center;
+    font: normal normal normal 16px/22px var(--font-secondary);
+    color: var(--black-color);
+    margin-bottom: 38px;
+}
+
+#main a{
+    display: inline-block;
+}
+
+#main .btn{
+    width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.btn {
+    border-radius: 50px;
+    box-shadow: 5px 10px 14px var(--transparent-black-color);
+    text-decoration: none;
+    color: var(--black-color);
+    padding: 5px 10px;
+    display: inline-block;
+}
+.btn-primary {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    font: normal normal bold 16px/22px var(--font-primary);
+}
+.btn-large {
+    padding: 22px 150px;
+}
+
+#cta {
+    margin-top: 100px;
+
+}
+.col-3{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+#cta .section__heading {
+    text-align: center;
+    font: normal normal normal 36px/42px var(--font-primary);
+    color: var(--black-color);
+    margin-bottom: 120px;
+}
+.cta {
+    text-align: center;
+}
+.cta img {
+    margin-bottom: 15px;
+}
+.cta p {
+    margin-bottom: 20px;
+}
+.cta p:first-of-type{
+    font: normal normal 800 20px/24px var(--font-primary);
+    letter-spacing: 5.96px;
+}
+.cta p:last-of-type{
+    font: normal normal normal 16px/19px var(--font-secondary);
+    color: var(--grey-color-300);
 }
