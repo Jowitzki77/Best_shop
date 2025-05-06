@@ -128,6 +128,9 @@ body{
 }
 .cta {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .cta img {
     margin-bottom: 15px;
@@ -142,4 +145,29 @@ body{
 .cta p:last-of-type{
     font: normal normal normal 16px/19px var(--font-secondary);
     color: var(--grey-color-300);
+}
+.circle{
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+.red{
+    background-color: var(--red-color);
+}
+
+.blue{
+    background-color: var(--blue-color);
+}
+.green{
+    background-color: var(--green-color);
+}
+.circle img{
+    position: relative;
+    top: 7px;
+    right: -25px;
+}
+.blue img{
+    top: 14px;
+    right: -20px;
 }
