@@ -28,8 +28,7 @@ body{
 
 .container {
     width: 1352px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .header {
@@ -67,17 +66,16 @@ body{
     padding-bottom: 23px;
 }
 #main{
-    background: url("../assets/background.png") 0% 0% no-repeat padding-box;
-    background-size: 100% auto;
-    background-position: bottom;
-    min-height: 912px;
     margin-top: 130px;
+}
+#main img {
+    width: 100%;
 }
 .section__heading{
     font: normal normal normal 49px/57px var(--font-primary);
     color: var(--black-color);
     margin-bottom: 20px;
-    text-align: center;
+
 }
 #main .section__description{
     text-align: center;
@@ -145,7 +143,7 @@ body{
 
     font: normal normal normal 36px/42px var(--font-primary);
     color: var(--black-color);
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 
 }
 .cta {
@@ -196,17 +194,28 @@ body{
 #benefits{
     background-color: var(--grey-color-100);
     padding: 105px;
-}
 
+
+}
+.container__inner{
+    margin-left: 135px;
+    margin-right: 135px;
+    background-color: var(--white-color);
+    padding: 0 71px 38px 36px;
+    display: flex;
+    align-items: center;
+}
+#benefits .row{
+    margin-left: 135px;
+    margin-right: 135px;
+}
 .row {
     display: flex;
     align-items: center;
-    background-color: var(--white-color);
-    padding: 38px 71px 38px 36px;
     margin-bottom: 37px;
 }
 
-.row:nth-child(2n){
+.row:nth-child(2n) > .container__inner{
     flex-direction: row-reverse;
 }
 
@@ -287,6 +296,9 @@ hr{
 }
 #pricing .col-3{
     gap: 40px;
+}
+#pricing .section__heading{
+    margin-bottom: 50px;
 }
 .pricing--red{
     border: 1px solid var(--red-color);
@@ -400,5 +412,5 @@ hr{
  .form__field--consent .consent__text{
      margin-left: 30px;
      display: block;
-     
+
  }
