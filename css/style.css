@@ -210,7 +210,8 @@ body{
     flex-direction: row-reverse;
 }
 
-#benefits .col {
+
+.row .col {
     width: 50%;
 }
 #benefits .col:last-of-type{
@@ -331,3 +332,73 @@ hr{
     position: relative;
     bottom: -60px;
 }
+
+#contact .section__heading {
+    font: normal normal normal 49px/57px Raleway;
+    margin-bottom: 22px;
+}
+
+.contact__info { margin-top: 40px; }
+.contact__info a {
+    font: normal normal 600 16px/22px Open Sans;
+    color: var(--grey-color-400);
+    text-decoration: none;
+}
+.contact__info img {
+    margin-right: 10px;
+}.contact__info img:last-of-type{margin-left: 20px}
+
+ .form .form__field{
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 47px;
+ }
+ .form .form__field label{
+     font: normal normal bold 11px/15px var(--font-primary);
+     letter-spacing: 3.28px;
+     color: var(--blue-color);
+     text-transform: uppercase;
+ }
+ .form .form__field input{
+     border: 0;
+     border-bottom: 1px solid var(--grey-color-400);
+ }
+ .form .form__field--consent{
+     font: normal normal normal 12px/17px var(--font-primary);
+     color: var(--grey-color-300);
+     margin-bottom: 20px;
+ }
+ .form .form__field input[type="submit"]{
+     align-self: flex-end;
+     font: normal normal bold 13px/18px var(--font-primary);
+     padding-left: 97px;
+     padding-right: 97px;
+ }
+ .form__field--consent input{
+     height: 24px;
+     width: 24px;
+     position: relative;
+     left: 30px;
+     opacity: 0;
+ }
+ .form__field--consent input:checked + .checkbox{
+     background-image: url("../assets/checkmark.svg");
+     background-repeat: no-repeat;
+     background-position: center;
+ }
+
+
+ .form .checkbox{
+     height: 24px;
+     width: 24px;
+     display: inline-block;
+     border: 1px solid var(--grey-color-400);
+     border-radius: 4px;
+
+ }
+
+ .form__field--consent .consent__text{
+     margin-left: 30px;
+     display: block;
+     
+ }
