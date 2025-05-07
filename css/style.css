@@ -75,6 +75,7 @@ body{
     font: normal normal normal 49px/57px var(--font-primary);
     color: var(--black-color);
     margin-bottom: 20px;
+    text-align: center;
 
 }
 #main .section__description{
@@ -197,17 +198,21 @@ body{
 
 
 }
+.recognition .container__inner {
+    background: none;
+    border: none;
+}
 .container__inner{
     margin-left: 135px;
     margin-right: 135px;
     background-color: var(--white-color);
     padding: 0 71px 38px 36px;
+    border: 1px solid var(--grey-color-200);
     display: flex;
     align-items: center;
 }
-#benefits .row{
-    margin-left: 135px;
-    margin-right: 135px;
+#benefits .row .col{
+    margin-right: 50px;
 }
 .row {
     display: flex;
@@ -229,10 +234,12 @@ body{
     align-items: center;
 }
 
-#benefits .col .section__heading{
+#benefits .col .section__heading,
+#benefits .col--recognition .section__heading{
     margin-bottom: 30px;
 }
-#benefits .col .section__description{
+#benefits .col .section__description,
+#benefits .col--recognition .section__description{
     margin-bottom: 50px;
 }
 hr{
@@ -260,17 +267,51 @@ hr{
     max-width: 320px;
     position: relative;
     z-index: 1;
-    top: -150px;
 }
-.circle--big{
-    width: 320px;
-    height: 320px;
+.phone{
+    margin-top: 30px;
+    content: "";
+    display: block;
+    background: var(--blue-color);
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+
+}
+#benefits .circle{
+    width: 300px;
+    height: 300px;
     position: relative;
     right: 50px;
     top: 150px;
     border-radius: 50%;
     z-index: 0;
 }
+
+.container__recognition__inner {
+    display: flex;
+    align-items: normal;
+    gap: 50px;
+}
+.col--recognition {
+    background: var(--white-color);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col--recognition--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 370px;
+    padding-left: 38px;
+    padding-right: 38px;
+}
+.col--recognition:nth-child(2) {
+    background: var(--green-color);
+}
+
 .footer {
     background: var(--grey-color-200) 0% 0% no-repeat padding-box;
     box-shadow: 0 -5px 40px #00000029;
