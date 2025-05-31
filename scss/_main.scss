@@ -1,4 +1,6 @@
-@import "general/variables";
+@use 'general/variables';
+@use 'general/mixins';
+@use 'vendor/reset';
 
 
 * {
@@ -6,19 +8,23 @@
 }
 
 body {
-    font-family: $font-primary;
+    font-family: variables.$font-primary;
 }
 
 .container {
     width: 1352px;
-    margin: 0 auto;
+    margin: 0 auto ;
+    @include mixins.tablet{
+        width: 100%;
+        padding: 0 15px;
+    }
 }
 
 .header {
-    box-shadow: 0 3px 6px $grey-color-300;
+    box-shadow: 0 3px 6px variables.$grey-color-300;
     position: sticky;
     top: 0;
-    background-color: $white-color;
+    background-color: variables.$white-color;
     z-index: 2;
 
     .container {
@@ -26,28 +32,57 @@ body {
         justify-content: space-between;
         align-items: center;
         height: 70px;
+        position: relative;
     }
 
     &__logo {
-        font: normal normal 300 32px/37px $font-secondary;
-        color: $blue-color;
+        font: normal normal 300 32px/37px variables.$font-secondary;
+        color: variables.$blue-color;
+    }
+
+    &__checkbox {
+        display: none;
+    }
+    &__toggle {
+        display: none;
+        font-size: 32px;
+        cursor: pointer;
+
+        @include mixins.tablet {
+            display: block;
+        }
     }
 
     &__menu {
+        display: flex;
+        gap: 30px;
         a {
             text-decoration: none;
             text-transform: uppercase;
             font: normal normal bold 11px/15px "Open Sans";
             letter-spacing: 3.28px;
-            color: $grey-color-300;
+            color: variables.$grey-color-300;
             margin-right: 95px;
 
             &:hover {
-                color: $black-color;
-                border-bottom: 4px solid $blue-color;
+                color: variables.$black-color;
+                border-bottom: 4px solid variables.$blue-color;
                 padding-bottom: 23px;
             }
         }
+        @include mixins.tablet {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background-color: variables.$white-color;
+            padding: 15px;
+        }
+    }
+    .header__checkbox:checked ~ .header__menu {
+        display: flex;
     }
 }
 
@@ -60,8 +95,8 @@ body {
 
     .section__description {
         text-align: center;
-        font: normal normal normal 16px/22px $font-secondary;
-        color: $black-color;
+        font: normal normal normal 16px/22px variables.$font-secondary;
+        color: variables.$black-color;
         margin-bottom: 38px;
     }
 
@@ -78,36 +113,36 @@ body {
 }
 
 .section__heading {
-    font: normal normal normal 36px/42px $font-primary;
-    color: $black-color;
+    font: normal normal normal 36px/42px variables.$font-primary;
+    color: variables.$black-color;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .btn {
     border-radius: 50px;
-    box-shadow: 5px 10px 14px $transparent-black-color;
+    box-shadow: 5px 10px 14px variables.$transparent-black-color;
     text-decoration: none;
-    color: $black-color;
+    color: variables.$black-color;
     padding: 5px 10px;
     display: inline-block;
 
     &-primary {
-        background-color: $blue-color;
-        color: $white-color;
-        font: normal normal bold 16px/22px $font-primary;
+        background-color: variables.$blue-color;
+        color: variables.$white-color;
+        font: normal normal bold 16px/22px variables.$font-primary;
     }
 
     &-secondary {
-        background-color: $red-color;
-        color: $white-color;
-        font: normal normal bold 16px/22px $font-secondary;
+        background-color: variables.$red-color;
+        color: variables.$white-color;
+        font: normal normal bold 16px/22px variables.$font-secondary;
     }
 
     &-tertiary {
-        background-color: $green-color;
-        color: $white-color;
-        font: normal normal bold 16px/22px $font-secondary;
+        background-color: variables.$green-color;
+        color: variables.$white-color;
+        font: normal normal bold 16px/22px variables.$font-secondary;
     }
 
     &-large {
@@ -148,13 +183,13 @@ body {
         margin-bottom: 20px;
 
         &:first-of-type {
-            font: normal normal 800 20px/24px $font-primary;
+            font: normal normal 800 20px/24px variables.$font-primary;
             letter-spacing: 5.96px;
         }
 
         &:last-of-type {
-            font: normal normal normal 16px/19px $font-secondary;
-            color: $grey-color-300;
+            font: normal normal normal 16px/19px variables.$font-secondary;
+            color: variables.$grey-color-300;
         }
     }
 }
@@ -177,20 +212,20 @@ body {
     }
 
     &.red {
-        background-color: $red-color;
+        background-color: variables.$red-color;
     }
 
     &.blue {
-        background-color: $blue-color;
+        background-color: variables.$blue-color;
     }
 
     &.green {
-        background-color: $green-color;
+        background-color: variables.$green-color;
     }
 }
 
 #benefits {
-    background-color: $grey-color-100;
+    background-color: variables.$grey-color-100;
     padding: 105px;
 
     .row {
@@ -244,9 +279,9 @@ body {
 .container__inner {
     margin-left: 135px;
     margin-right: 135px;
-    background-color: $white-color;
+    background-color: variables.$white-color;
     padding: 0 71px 38px 36px;
-    border: 1px solid $grey-color-200;
+    border: 1px solid variables.$grey-color-200;
     display: flex;
     align-items: center;
 }
@@ -283,7 +318,7 @@ hr {
 
 .phone {
     margin-top: 30px;
-    background: $blue-color;
+    background: variables.$blue-color;
     height: 300px;
     width: 300px;
     border-radius: 50%;
@@ -296,7 +331,7 @@ hr {
 }
 
 .col--recognition {
-    background: $white-color;
+    background: variables.$white-color;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -311,12 +346,12 @@ hr {
     }
 
     &:nth-child(2) {
-        background: $green-color;
+        background: variables.$green-color;
     }
 }
 
 .footer {
-    background: $grey-color-200;
+    background: variables.$grey-color-200;
     box-shadow: 0 -5px 40px #00000029;
     height: 89px;
     padding: 20px 0;
@@ -329,8 +364,8 @@ hr {
 
     .header__logo {
         p:last-of-type {
-            font: normal normal normal 11px/15px $font-secondary;
-            color: $grey-color-300;
+            font: normal normal normal 11px/15px variables.$font-secondary;
+            color: variables.$grey-color-300;
         }
     }
 
@@ -345,15 +380,15 @@ hr {
     gap: 25px;
 
     &--red {
-        border: 1px solid $red-color;
+        border: 1px solid variables.$red-color;
     }
 
     &--blue {
-        border: 1px solid $blue-color;
+        border: 1px solid variables.$blue-color;
     }
 
     &--green {
-        border: 1px solid $green-color;
+        border: 1px solid variables.$green-color;
     }
 
     .btn {
@@ -362,32 +397,32 @@ hr {
     }
 
     .pricing__title {
-        font: normal normal bold 20px/10px $font-primary;
-        color: $blackblue-color-v2;
+        font: normal normal bold 20px/10px variables.$font-primary;
+        color: variables.$blackblue-color-v2;
         margin-bottom: 15px;
     }
 
     .pricing__price {
-        font: normal normal 300 46px/20px $font-primary;
+        font: normal normal 300 46px/20px variables.$font-primary;
     }
 
     &--blue .pricing__price {
-        color: $blue-color;
+        color: variables.$blue-color;
     }
 
     &--green .pricing__price {
-        color: $green-color;
+        color: variables.$green-color;
     }
 
     &--red .pricing__price {
-        color: $red-color;
+        color: variables.$red-color;
     }
 
     .pricing__offer {
         margin: 10px 0 70px;
         min-height: 10px;
-        font: normal normal bold 12px/1px $font-secondary;
-        color: $blackblue-color-v2;
+        font: normal normal bold 12px/1px variables.$font-secondary;
+        color: variables.$blackblue-color-v2;
     }
 
     .pricing__features__item {
@@ -410,7 +445,7 @@ hr {
 
     a {
         font: normal normal 600 16px/22px Open Sans;
-        color: $grey-color-400;
+        color: variables.$grey-color-400;
         text-decoration: none;
     }
 
@@ -430,27 +465,27 @@ hr {
         margin-bottom: 47px;
 
         label {
-            font: normal normal bold 11px/15px $font-primary;
+            font: normal normal bold 11px/15px variables.$font-primary;
             letter-spacing: 3.28px;
-            color: $blue-color;
+            color: variables.$blue-color;
             text-transform: uppercase;
         }
 
         input {
             border: 0;
-            border-bottom: 1px solid $grey-color-400;
+            border-bottom: 1px solid variables.$grey-color-400;
 
             &[type="submit"] {
                 align-self: flex-end;
-                font: normal normal bold 13px/18px $font-primary;
+                font: normal normal bold 13px/18px variables.$font-primary;
                 padding-left: 97px;
                 padding-right: 97px;
             }
         }
 
         &--consent {
-            font: normal normal normal 12px/17px $font-primary;
-            color: $grey-color-300;
+            font: normal normal normal 12px/17px variables.$font-primary;
+            color: variables.$grey-color-300;
             margin-bottom: 20px;
 
             input {
@@ -471,7 +506,7 @@ hr {
                 height: 24px;
                 width: 24px;
                 display: inline-block;
-                border: 1px solid $grey-color-400;
+                border: 1px solid variables.$grey-color-400;
                 border-radius: 4px;
             }
 
