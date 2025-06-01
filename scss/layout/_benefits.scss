@@ -1,0 +1,149 @@
+@use '../general/mixins';
+@use '../general/variables';
+
+
+#benefits {
+  background-color: variables.$grey-color-100;
+  padding: 105px;
+
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 37px;
+
+    &:nth-child(2n) > .container__inner {
+      flex-direction: row-reverse;
+      
+    }
+    @include mixins.tablet {
+      flex-direction: column;
+      align-items: stretch;
+
+      &:nth-child(2n) > .container__inner {
+        flex-direction: column;
+      }
+    }
+    @include mixins.phone {
+      flex-direction: column;
+      align-items: stretch;
+
+      &:nth-child(2n) > .container__inner {
+        flex-direction: column;
+      }
+    }
+
+
+    .col {
+      width: 50%;
+      position: relative;
+
+      @include mixins.tablet {
+        position: relative;
+        margin: 0 auto 2rem auto;
+        width: 200px;
+        height: 200px;
+        top: 0;
+        left: 0;
+      }
+
+      @include mixins.phone {
+        position: relative;
+        margin: 0 auto 2rem auto;
+        width: 150px;
+        height: 150px;
+        top: 0;
+        left: 0;
+      }
+
+
+
+      &:last-of-type {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  .col {
+    .section__heading {
+      margin-bottom: 30px;
+    }
+
+    .section__description {
+      margin-bottom: 50px;
+    }
+  }
+
+  .circle {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    right: 50px;
+    top: 150px;
+    border-radius: 50%;
+    z-index: 0;
+  }
+}
+// MACBOOK section — first row
+#benefits .row:nth-child(1) .container__inner {
+  @include mixins.tablet {
+    flex-direction: column;
+
+    .col:first-child { // text
+      order: 2;
+    }
+
+    .col:last-child { // macbook image
+      order: 1;
+    }
+  }
+
+  @include mixins.phone {
+    flex-direction: column;
+
+    .col:first-child {
+      order: 2;
+    }
+
+    .col:last-child {
+      order: 1;
+    }
+  }
+}
+
+#benefits .row:nth-child(2) .container__inner {
+  @include mixins.tablet {
+    flex-direction: column;
+
+
+    .col:first-child { // text
+      order: 2;
+    }
+
+    .col:last-child { // iphone image
+      order: 1;
+    }
+  }
+
+  @include mixins.phone {
+    flex-direction: column;
+
+    .col:first-child {
+      order: 2;
+    }
+
+    .col:last-child {
+      order: 1;
+    }
+  }
+}
+#benefits .row:nth-child(2) .col:last-child {
+  @include mixins.tablet {
+    margin-bottom: 2rem;
+  }
+
+  @include mixins.phone {
+    margin-bottom: 2rem;
+  }
+}

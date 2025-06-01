@@ -1,6 +1,8 @@
 @use 'general/variables';
 @use 'general/mixins';
 @use 'vendor/reset';
+@use 'layout/header';
+@use 'layout/benefits';
 
 
 * {
@@ -20,71 +22,7 @@ body {
     }
 }
 
-.header {
-    box-shadow: 0 3px 6px variables.$grey-color-300;
-    position: sticky;
-    top: 0;
-    background-color: variables.$white-color;
-    z-index: 2;
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 70px;
-        position: relative;
-    }
-
-    &__logo {
-        font: normal normal 300 32px/37px variables.$font-secondary;
-        color: variables.$blue-color;
-    }
-
-    &__checkbox {
-        display: none;
-    }
-    &__toggle {
-        display: none;
-        font-size: 32px;
-        cursor: pointer;
-
-        @include mixins.tablet {
-            display: block;
-        }
-    }
-
-    &__menu {
-        display: flex;
-        gap: 30px;
-        a {
-            text-decoration: none;
-            text-transform: uppercase;
-            font: normal normal bold 11px/15px "Open Sans";
-            letter-spacing: 3.28px;
-            color: variables.$grey-color-300;
-            margin-right: 95px;
-
-            &:hover {
-                color: variables.$black-color;
-                border-bottom: 4px solid variables.$blue-color;
-                padding-bottom: 23px;
-            }
-        }
-        @include mixins.tablet {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background-color: variables.$white-color;
-            padding: 15px;
-        }
-    }
-    .header__checkbox:checked ~ .header__menu {
-        display: flex;
-    }
-}
 
 #main {
     margin-top: 130px;
@@ -167,6 +105,15 @@ body {
     display: flex;
     justify-content: center;
     gap: 200px;
+
+    @include mixins.tablet{
+        flex-direction: column;
+        align-items: center;
+    }
+    @include mixins.phone{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .cta {
@@ -224,50 +171,6 @@ body {
     }
 }
 
-#benefits {
-    background-color: variables.$grey-color-100;
-    padding: 105px;
-
-    .row {
-        display: flex;
-        align-items: center;
-        margin-bottom: 37px;
-
-        &:nth-child(2n) > .container__inner {
-            flex-direction: row-reverse;
-        }
-
-        .col {
-            width: 50%;
-
-            &:last-of-type {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    }
-
-    .col {
-        .section__heading {
-            margin-bottom: 30px;
-        }
-
-        .section__description {
-            margin-bottom: 50px;
-        }
-    }
-
-    .circle {
-        width: 300px;
-        height: 300px;
-        position: relative;
-        right: 50px;
-        top: 150px;
-        border-radius: 50%;
-        z-index: 0;
-    }
-}
 
 .recognition {
     .container__inner {
@@ -328,6 +231,27 @@ hr {
     display: flex;
     align-items: normal;
     gap: 50px;
+    @include mixins.tablet {
+        flex-direction: column;
+    }
+
+    @include mixins.phone {
+        flex-direction: column;
+    }
+
+    .col--recognition {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        &:first-child {
+            order: 1;
+        }
+
+        &:last-child {
+            order: 2;
+        }
+    }
+
 }
 
 .col--recognition {
